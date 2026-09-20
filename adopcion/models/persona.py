@@ -1,5 +1,21 @@
 # Clase Persona: representa a una persona en general
 class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def presentarse(self):
+        print(f"Hola, soy {self.nombre} y tengo {self.edad} años.")
+
+
+class Adoptante(Persona):
+    def __init__(self, nombre, edad):
+        super().__init__(nombre, edad)
+        self.mascotas_adoptadas = []
+
+    def adoptar(self, mascota):
+        self.mascotas_adoptadas.append(mascota)
+""" class Persona:
     def __init__(self, nombre: str, edad: int):
         self.nombre = nombre
         self.edad = edad
@@ -19,3 +35,4 @@ class Adoptante(Persona):
         self.mascotas_adoptadas.append(mascota)
         mascota.adoptado = True
         return f"{self.nombre} ha adoptado a {mascota.nombre}."
+ """
